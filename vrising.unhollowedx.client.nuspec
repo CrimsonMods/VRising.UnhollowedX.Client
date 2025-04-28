@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>VRising.UnhollowedX.Client</id>
+    <version>1.0.0</version>
+    <authors>SkyTech6</authors>
+    <owners>SkyTech6</owners>
+    <description>VRising Unhollowed DLLs</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright ©2023</copyright>
+    <tags>interop</tags>
+  </metadata>
+  <files>
+    <file src="lib\**" target="lib" />
+  </files>
+</package>
