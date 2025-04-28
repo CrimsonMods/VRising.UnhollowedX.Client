@@ -1,4 +1,4 @@
-name: Publish NuGet Package
+name: Build and Publish NuGet Package
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
     - uses: actions/checkout@v4
@@ -22,11 +22,14 @@ jobs:
       with:
         dotnet-version: 6.0.x
     
-    - name: Install NuGet CLI
-      run: dotnet tool install --global NuGet.CommandLine
-      
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+      with:
+        nuget-version: '6.x'
+    
     - name: Set version
       id: set-version
+      shell: bash
       run: |
         if [ "${{ github.event.inputs.version }}" != "" ]; then
           echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
@@ -38,6 +41,7 @@ jobs:
         echo "Using version: ${{ env.VERSION }}"
     
     - name: Update .nuspec version
+      shell: bash
       run: |
         sed -i "s/<version>.*<\/version>/<version>${{ env.VERSION }}<\/version>/" VRising.UnhollowedX.Client.nuspec
     
