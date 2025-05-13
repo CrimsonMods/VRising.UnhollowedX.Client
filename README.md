@@ -25,7 +25,9 @@ or directly in your project file
 
 This nuget package is maintained by the V Rising Modding community. If you have a released mod for the game ping skytech6 in the discord to become a maintainer.
 
-Being a maintainer allows you to directly push updates to the `master` branch or approve pull requests of others doing Pull Requests. 
+Being a maintainer allows you to directly push updates to the `master` branch or approve pull requests of others. 
+
+Maintainers ensure that this unhollowed doesn't rely on a single person to stay up-to-date.
 
 ## Support
 
